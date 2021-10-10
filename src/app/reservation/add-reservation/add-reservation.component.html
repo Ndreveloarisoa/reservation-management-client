@@ -1,0 +1,58 @@
+<div class="row pt-3">
+  <div class="col-md-3 col-lg-3"></div>
+  <div class="col-md-6 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <div class="col-sm-6 mt-1">
+          <h3 class="card-title mb-0">{{isUpdateMode ? 'Modifier Réservation' : 'Nouvel Réservation'}}</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="reservationForm">
+          <div class="card-body">
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Client</label>
+                <input type="text" name="clientName" formControlName="clientName" class="form-control" disabled>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Hotel</label>
+                <input type="text" name="hotelName" formControlName="hotelName" class="form-control" disabled>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Ville</label>
+                <input type="text" name="villeHotel" formControlName="villeHotel" class="form-control" disabled>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Nombre d'étoiles</label>
+                <input type="number" name="nbreEtoiles" formControlName="nbreEtoiles" class="form-control" min="0" disabled>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Nombre de nuits<span class="required">*</span></label>
+                <input type="number" name="nbreDeNuit" formControlName="nbreDeNuit" class="form-control" min="0" max="5">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Nombre de personnes<span class="required">*</span></label>
+                <input type="number" name="nbreDePersonne" formControlName="nbreDePersonne" class="form-control" min="0" max="5">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button (click)="reserver()" class="btn btn-primary">Reserver</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-lg-3"></div>
+</div>

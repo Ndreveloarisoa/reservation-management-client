@@ -1,0 +1,81 @@
+<div class="row pt-3">
+  <div class="col-md-5" style="margin-left: 50px;">
+    <div class="card">
+      <div class="card-header">
+        <div class="col-sm-7 mt-1">
+          <h3 class="card-title mb-0">Ajouter client</h3>
+          <div class="text-center text-danger" *ngIf="errorMessageRegister">
+            {{errorMessageRegister}}
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="registerForm">
+          <div class="card-body">
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Nom<span class="required">*</span></label>
+                <input type="text" name="nom" formControlName="nom" class="form-control">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Prenom<span class="required">*</span></label>
+                <input type="text" name="prenom" formControlName="prenom" class="form-control">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Email<span class="required">*</span></label>
+                <input type="text" name="email" formControlName="email" class="form-control">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Mot de passe<span class="required">*</span></label>
+                <input type="password" name="motDePasse" formControlName="motDePasse" class="form-control">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button (click)="register()" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <div class="col-sm-8 mt-1">
+          <h3 class="card-title mb-0">Connexion</h3>
+          <div class="text-center text-danger" *ngIf="errorMessageLogin">
+              {{errorMessageLogin}}
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="loginForm">
+          <div class="card-body">
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Email<span class="required">*</span></label>
+                <input type="text" name="email" formControlName="email" class="form-control">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Mot de passe<span class="required">*</span></label>
+                <input type="password" name="motDePasse" formControlName="motDePasse" class="form-control">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button (click)="login()" class="btn btn-primary">Connecter</button>
+      </div>
+    </div>
+  </div>
+</div>

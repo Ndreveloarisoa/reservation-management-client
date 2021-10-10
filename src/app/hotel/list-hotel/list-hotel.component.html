@@ -1,0 +1,41 @@
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="card col-md-10 col-lg-12 col-sm-12">
+      <div class="card-header">
+        <div class="col-sm-5 mt-1">
+          <h3 class="card-title mb-0">Liste des Hotels</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <button (click)="ajouterHotel()"
+              class="btn btn-primary pull-right" title="Ajouter un livre"><i class="fa fa-plus"></i></button>
+      <table class="table table-striped">
+        <thead>
+        <tr class="text-center">
+          <th>#</th>
+          <th>Nom</th>
+          <th>Ville</th>
+          <th>Prix par nuit</th>
+          <th>Etoiles</th>
+          <th class="pull-right">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let hotel of hotels" class="text-center">
+          <td>{{hotel.id}}</td>
+          <td>{{hotel.nom}}</td>
+          <td>{{hotel.ville}}</td>
+          <td>{{hotel.prixParNuit | currency}}</td>
+          <td>{{hotel.nbreEtoiles}}</td>
+          <td><a (click)="modifierHotel(hotel.id)" class="cursor"><i class="fa fa-edit"
+                                                                              style="color: blue; cursor: pointer"></i></a></td>
+          <td><a (click)="supprimerHotel(hotel.id)" class="cursor"><i class="fa fa-trash"
+                                                                                  style="color: red; cursor: pointer"></i></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

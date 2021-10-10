@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark border-bottom fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand mr-5" routerLink="/main/accueil">
+      <span style="color: #027581">GESTION HOTELIERE</span>
+    </a>
+    <button aria-controls="navbarNavDropdown" aria-expanded="false" class="navbar-toggler" data-bs-target="#navbarNavDropdown" data-bs-toggle="collapse" type="button">
+          <span class="navbar-toggler-icon">
+          </span>
+    </button>
+    <div class="collapse navbar-collapse w-auto" id="navbarNavDropdown">
+      <ul class="navbar-nav align-content-end ml-auto">
+        <a type="button" *ngIf="!nomClientConnecte" class="dropdown-item pointer text-info" routerLink="/main/register">Connexion</a>
+        <a  *ngIf="nomClientConnecte" class="dropdown-item pointer">{{nomClientConnecte}}</a>
+        <a type="button" *ngIf="nomClientConnecte" class="dropdown-item pointer text-info" (click)="logout()">Deconnexion</a>
+      </ul>
+    </div>
+  </div>
+</nav>

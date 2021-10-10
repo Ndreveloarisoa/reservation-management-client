@@ -1,0 +1,48 @@
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="card col-md-10 col-lg-12 col-sm-12" *ngIf="reservations.length>0">
+      <div class="card-header">
+        <div class="col-sm-5 mt-1">
+          <h3 class="card-title mb-0">Liste des Reservations</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="jumbotron jumbotron-fluid" *ngIf="reservations.length==0">
+        <div class="container">
+          <h1 class="display-4 text-center">Vous n'avez aucune réservation</h1>
+        </div>
+      </div>
+      <table class="table table-striped" *ngIf="reservations.length>0">
+        <thead>
+        <tr class="text-center">
+          <th>#</th>
+          <th>Client</th>
+          <th>Hotel</th>
+          <th>Nombre de personnes</th>
+          <th>Nombre de nuits</th>
+          <th>Date</th>
+          <th>Prix</th>
+          <th>Etoiles</th>
+          <th class="text-right">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reservation of reservations" class="text-center">
+          <td>{{reservation.id}}</td>
+          <td>{{reservation.clientName}}</td>
+          <td>{{reservation.hotelName}}</td>
+          <td>{{reservation.nbreDePersonne}}</td>
+          <td>{{reservation.nbreDeNuit}}</td>
+          <td>{{reservation.dateDeReservation}}</td>
+          <td>{{reservation.prix | currency}}</td>
+          <td>{{reservation.nbreEtoiles}}</td>
+          <td><a (click)="supprimerReservation(reservation.id)" class="cursor"><i class="fa fa-trash"
+                                                              style="color: red; cursor: pointer"></i></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

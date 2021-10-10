@@ -1,0 +1,49 @@
+<div class="row pt-3">
+  <div class="col-md-3 col-lg-3"></div>
+  <div class="col-md-6 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <div class="col-sm-6 mt-1">
+          <h3 class="card-title mb-0">{{isUpdateMode ? 'Modifier Hotel' : 'Nouvel Hotel'}}</h3>
+          <div class="text-center text-danger" *ngIf="errorMessage">
+            {{errorMessage}}
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="hotelForm">
+          <div class="card-body">
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Nom<span class="required">*</span></label>
+                <input type="text" name="nom" formControlName="nom" class="form-control">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Ville<span class="required">*</span></label>
+                <input type="text" name="ville" formControlName="ville" class="form-control">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Prix par nuit<span class="required">*</span></label>
+                <input type="number" name="prixParNuit" formControlName="prixParNuit" class="form-control" min="0">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>Nombre d'etoiles<span class="required">*</span></label>
+                <input type="number" name="nbreEtoiles" formControlName="nbreEtoiles" class="form-control" min="0" max="5">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button (click)="saveHotel()" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-lg-3"></div>
+</div>

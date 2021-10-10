@@ -1,0 +1,57 @@
+.navbar {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .1rem;
+  background-color: #eaece5;
+}
+
+.navbar-nav li {
+  padding-right: .7rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  padding-top: .8rem;
+}
+
+
+.navbar-toggler {
+  outline: none;
+}
+
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu {
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: .9rem;
+  letter-spacing: .1rem;
+  background: white;
+}
+
+.dropdown-menu .dropdown-item {
+  color: grey;
+}
+
+
+.header-title {
+  color: white;
+}
+
+
+.mr-5 {
+  padding-right: 25%;
+}
+
+.login-panel i {
+  margin-right: 8px;
+}
